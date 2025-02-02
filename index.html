@@ -19,61 +19,120 @@
     />
   </head>
   <body class="bg-gray-900 text-gray-100">
+    <!-- Header met navigatie en taalkeuze -->
     <header
       class="fixed top-0 left-0 w-full bg-amber-500 p-4 shadow-md flex justify-between items-center z-50"
     >
-      <h1 class="text-3xl font-title text-black">Fowed van Gent Zuid</h1>
+      <h1 data-i18n="headerTitle" class="text-3xl font-title text-black">
+        Fowed van Gent Zuid
+      </h1>
       <nav class="hidden md:block">
         <ul class="flex gap-4">
-          <li><a href="#hero" class="hover:text-black font-bold">Home</a></li>
           <li>
-            <a href="#diensten" class="hover:text-black font-bold">Diensten</a>
+            <a
+              href="#hero"
+              data-i18n="navHome"
+              class="hover:text-black font-bold"
+              >Home</a
+            >
           </li>
           <li>
-            <a href="#tarieven" class="hover:text-black font-bold">Tarieven</a>
+            <a
+              href="#diensten"
+              data-i18n="navDiensten"
+              class="hover:text-black font-bold"
+              >Diensten</a
+            >
           </li>
           <li>
-            <a href="#over-ons" class="hover:text-black font-bold">Over Ons</a>
+            <a
+              href="#tarieven"
+              data-i18n="navTarieven"
+              class="hover:text-black font-bold"
+              >Tarieven</a
+            >
           </li>
           <li>
-            <a href="#contact" class="hover:text-black font-bold">Contact</a>
+            <a
+              href="#over-ons"
+              data-i18n="navOverOns"
+              class="hover:text-black font-bold"
+              >Over Ons</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              data-i18n="navContact"
+              class="hover:text-black font-bold"
+              >Contact</a
+            >
           </li>
         </ul>
       </nav>
-      <button id="hamburger" class="block md:hidden focus:outline-none z-50">
-        <span class="text-2xl text-black">&#9776;</span>
-      </button>
+      <div class="flex items-center gap-4">
+        <select
+          id="langSelect"
+          class="bg-gray-700 text-white py-1 px-3 rounded"
+        >
+          <option value="nl">NL</option>
+          <option value="en">EN</option>
+          <option value="fr">FR</option>
+        </select>
+        <button id="hamburger" class="block md:hidden focus:outline-none z-50">
+          <span class="text-2xl text-black">&#9776;</span>
+        </button>
+      </div>
     </header>
+
     <nav
       id="mobileMenu"
       class="fixed top-20 left-0 w-full bg-amber-500 shadow-md md:hidden hidden z-60"
     >
       <ul class="flex flex-col gap-4 p-4">
         <li>
-          <a href="#hero" class="hover:text-black font-bold block">Home</a>
+          <a
+            href="#hero"
+            data-i18n="navHome"
+            class="hover:text-black font-bold block"
+            >Home</a
+          >
         </li>
         <li>
-          <a href="#diensten" class="hover:text-black font-bold block"
+          <a
+            href="#diensten"
+            data-i18n="navDiensten"
+            class="hover:text-black font-bold block"
             >Diensten</a
           >
         </li>
         <li>
-          <a href="#tarieven" class="hover:text-black font-bold block"
+          <a
+            href="#tarieven"
+            data-i18n="navTarieven"
+            class="hover:text-black font-bold block"
             >Tarieven</a
           >
         </li>
         <li>
-          <a href="#over-ons" class="hover:text-black font-bold block"
+          <a
+            href="#over-ons"
+            data-i18n="navOverOns"
+            class="hover:text-black font-bold block"
             >Over Ons</a
           >
         </li>
         <li>
-          <a href="#contact" class="hover:text-black font-bold block"
+          <a
+            href="#contact"
+            data-i18n="navContact"
+            class="hover:text-black font-bold block"
             >Contact</a
           >
         </li>
       </ul>
     </nav>
+
     <section
       id="hero"
       class="relative mt-16 min-h-[70vh] flex items-center justify-center overflow-hidden p-8 scroll-animate"
@@ -116,7 +175,10 @@
       <div
         class="relative bg-black bg-opacity-70 p-8 rounded-md text-center max-w-2xl"
       >
-        <h2 class="text-4xl md:text-6xl font-title text-amber-500 mb-4">
+        <h2
+          data-i18n="heroWelcome"
+          class="text-4xl md:text-6xl font-title text-amber-500 mb-4"
+        >
           Welkom bij Fowed van Gent Zuid
         </h2>
         <div>
@@ -124,14 +186,21 @@
             href="tel:+32485044011"
             class="inline-flex items-center bg-amber-500 text-black py-2 px-4 rounded-full shadow-lg hover:bg-amber-600 transition"
           >
-            <i class="fas fa-phone-alt mr-2"></i> Bel nu
+            <i class="fas fa-phone-alt mr-2"></i>
+            <span data-i18n="heroCall">Bel nu</span>
           </a>
         </div>
       </div>
     </section>
+
     <main class="space-y-16">
       <section id="diensten" class="p-8 bg-gray-800 text-center scroll-animate">
-        <h2 class="text-4xl font-title text-amber-500 mb-8">Onze Diensten</h2>
+        <h2
+          data-i18n="dienstenTitle"
+          class="text-4xl font-title text-amber-500 mb-8"
+        >
+          Onze Diensten
+        </h2>
         <div
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto"
         >
@@ -139,10 +208,13 @@
             class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
           >
             <i class="fas fa-taxi text-5xl text-amber-500 mb-4"></i>
-            <h3 class="text-3xl font-title text-amber-500 mb-2">
+            <h3
+              data-i18n="dienst1Title"
+              class="text-3xl font-title text-amber-500 mb-2"
+            >
               Standaard Taxi
             </h3>
-            <p>
+            <p data-i18n="dienst1Text">
               Vervoer binnen Gent en omliggende regio’s voor je dagelijkse
               ritten.
             </p>
@@ -151,10 +223,13 @@
             class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
           >
             <i class="fas fa-plane text-5xl text-amber-500 mb-4"></i>
-            <h3 class="text-3xl font-title text-amber-500 mb-2">
+            <h3
+              data-i18n="dienst2Title"
+              class="text-3xl font-title text-amber-500 mb-2"
+            >
               Luchthaventransfers
             </h3>
-            <p>
+            <p data-i18n="dienst2Text">
               Betrouwbare ritten naar en van o.a. Brussels Airport, Charleroi en
               Antwerp.
             </p>
@@ -163,10 +238,13 @@
             class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
           >
             <i class="fas fa-ring text-5xl text-amber-500 mb-4"></i>
-            <h3 class="text-3xl font-title text-amber-500 mb-2">
+            <h3
+              data-i18n="dienst3Title"
+              class="text-3xl font-title text-amber-500 mb-2"
+            >
               Bruiloften &amp; Speciale Gelegenheden
             </h3>
-            <p>
+            <p data-i18n="dienst3Text">
               Exclusief vervoer voor bruiloften of andere feestelijke
               gelegenheden.
             </p>
@@ -175,63 +253,111 @@
             class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
           >
             <i class="fas fa-user-tie text-5xl text-amber-500 mb-4"></i>
-            <h3 class="text-3xl font-title text-amber-500 mb-2">
+            <h3
+              data-i18n="dienst4Title"
+              class="text-3xl font-title text-amber-500 mb-2"
+            >
               Privé Chauffeur
             </h3>
-            <p>Persoonlijke chauffeur voor comfortabele en discrete service.</p>
+            <p data-i18n="dienst4Text">
+              Persoonlijke chauffeur voor comfortabele en discrete service.
+            </p>
           </article>
         </div>
       </section>
+
       <section id="tarieven" class="p-8 bg-gray-900 text-center scroll-animate">
-        <h2 class="text-4xl font-title text-amber-500 mb-8">Tarieven</h2>
+        <h2
+          data-i18n="tarievenTitle"
+          class="text-4xl font-title text-amber-500 mb-8"
+        >
+          Tarieven
+        </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <!-- Standaard Taxi -->
           <article
             class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
           >
-            <h3 class="text-2xl font-title text-amber-500 mb-2">
+            <h3
+              data-i18n="taxiTitle"
+              class="text-2xl font-title text-amber-500 mb-2"
+            >
               Standaard Taxi
             </h3>
-            <p><strong>Instapprijs:</strong> €10 (inclusief 3 km)</p>
-            <p><strong>Kilometerprijs:</strong> €2,60 per extra km</p>
-            <p><strong>Wachttijd:</strong> €46 per uur (vanaf 5 min)</p>
-            <p><strong>Nachttarief:</strong> +€3 (tussen 22:00 en 6:00)</p>
+            <p>
+              <strong data-i18n="taxiPriceLabel">Instapprijs:</strong>
+              <span data-i18n="taxiPrice">€10 (inclusief 3 km)</span>
+            </p>
+            <p>
+              <strong data-i18n="taxiKmLabel">Kilometerprijs:</strong>
+              <span data-i18n="taxiKm">€2,60 per extra km</span>
+            </p>
+            <p>
+              <strong data-i18n="taxiWaitLabel">Wachttijd:</strong>
+              <span data-i18n="taxiWait">€46 per uur (vanaf 5 min)</span>
+            </p>
+            <p>
+              <strong data-i18n="taxiNightLabel">Nachttarief:</strong>
+              <span data-i18n="taxiNight">+€3 (tussen 22:00 en 6:00)</span>
+            </p>
           </article>
-
           <article
             class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
           >
-            <h3 class="text-2xl font-title text-amber-500 mb-2">
+            <h3
+              data-i18n="airportTitle"
+              class="text-2xl font-title text-amber-500 mb-2"
+            >
               Luchthaventransfers
             </h3>
-            <p><strong>Brussels Airport (Zaventem):</strong> €120</p>
-            <p><strong>Charleroi Airport:</strong> €170</p>
-            <p><strong>Oostende Airport:</strong> €115</p>
+            <p>
+              <strong>Brussels Airport (Zaventem):</strong>
+              <span data-i18n="airportBrussels">€120</span>
+            </p>
+            <p>
+              <strong>Charleroi Airport:</strong>
+              <span data-i18n="airportCharleroi">€170</span>
+            </p>
+            <p>
+              <strong>Oostende Airport:</strong>
+              <span data-i18n="airportOostende">€115</span>
+            </p>
           </article>
-
           <article
             class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
           >
-            <h3 class="text-2xl font-title text-amber-500 mb-2">
+            <h3
+              data-i18n="bruiloftTitle"
+              class="text-2xl font-title text-amber-500 mb-2"
+            >
               Bruiloften &amp; Speciale Gelegenheden
             </h3>
-            <p>Prijs op aanvraag, afhankelijk van duur en locatie</p>
+            <p data-i18n="bruiloftPrice">
+              Prijs op aanvraag, afhankelijk van duur en locatie
+            </p>
           </article>
-
           <article
             class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
           >
-            <h3 class="text-2xl font-title text-amber-500 mb-2">
+            <h3
+              data-i18n="priveTitle"
+              class="text-2xl font-title text-amber-500 mb-2"
+            >
               Privé Chauffeur
             </h3>
-            <p>
+            <p data-i18n="privePrice">
               Prijs op aanvraag, afhankelijk van de specifieke wensen en duur
             </p>
           </article>
         </div>
       </section>
+
       <section id="over-ons" class="p-8 bg-gray-800 text-center scroll-animate">
-        <h2 class="text-4xl font-title text-amber-500 mb-8">Over Ons</h2>
+        <h2
+          data-i18n="overOnsTitle"
+          class="text-4xl font-title text-amber-500 mb-8"
+        >
+          Over Ons
+        </h2>
         <div class="max-w-4xl mx-auto">
           <figure class="mb-8">
             <img
@@ -241,8 +367,13 @@
             />
           </figure>
           <article class="text-left mx-4">
-            <h3 class="text-3xl font-title text-amber-500 mb-4">Onze Missie</h3>
-            <p class="mb-4">
+            <h3
+              data-i18n="missionTitle"
+              class="text-3xl font-title text-amber-500 mb-4"
+            >
+              Onze Missie
+            </h3>
+            <p data-i18n="missionText1" class="mb-4">
               <strong>Taxi Fowed van Gent Zuid</strong> wordt gerund door Fouad
               Oulad Khlie, een ervaren taxichauffeur die bekend is in het Gentse
               uitgaansleven. Met een passie voor zijn vak en een persoonlijk
@@ -251,22 +382,34 @@
               betrokken is bij de Gentse gemeenschap. Hij heeft zelfs een rol
               gespeeld in de film <em>Belgica</em>.
             </p>
-            <p class="mb-4">
+            <p data-i18n="missionText2" class="mb-4">
               Naast zijn werk als taxi-chauffeur heeft hij oog voor de verhalen
               van zijn passagiers, van eenzame ouderen tot drukke feestgangers.
               Met zijn ervaring en humor biedt hij meer dan alleen een rit: een
               luisterend oor voor iedereen die het nodig heeft.
             </p>
             <ul class="list-disc list-inside">
-              <li>96% van onze klanten beveelt ons aan!</li>
-              <li>Klanttevredenheid, veiligheid en comfort staan voorop.</li>
+              <li data-i18n="missionPoint1">
+                96% van onze klanten beveelt ons aan!
+              </li>
+              <li data-i18n="missionPoint2">
+                Klanttevredenheid, veiligheid en comfort staan voorop.
+              </li>
             </ul>
           </article>
         </div>
       </section>
+
       <section id="contact" class="p-8 bg-gray-900 text-center scroll-animate">
-        <h2 class="text-4xl font-title text-amber-500 mb-4">Volg ons</h2>
-        <p class="mb-8">Blijf op de hoogte via onze social media-kanalen:</p>
+        <h2
+          data-i18n="followUs"
+          class="text-4xl font-title text-amber-500 mb-4"
+        >
+          Volg ons
+        </h2>
+        <p data-i18n="followUsText" class="mb-8">
+          Blijf op de hoogte via onze social media-kanalen:
+        </p>
         <div class="flex flex-wrap justify-center gap-4">
           <a
             href="https://www.facebook.com/TaxiFowedvanGentZuid"
@@ -294,30 +437,50 @@
           </a>
         </div>
       </section>
+
       <section
         id="recensies"
         class="p-8 bg-gray-800 text-center scroll-animate"
       >
-        <h2 class="text-4xl font-title text-amber-500 mb-4">Recensies</h2>
-        <p class="text-2xl text-amber-500 mb-8">
+        <h2
+          data-i18n="reviewsTitle"
+          class="text-4xl font-title text-amber-500 mb-4"
+        >
+          Recensies
+        </h2>
+        <p data-i18n="reviewsRating" class="text-2xl text-amber-500 mb-8">
           96% Aanbevolen (90 Beoordelingen)
         </p>
         <div class="space-y-6 max-w-2xl mx-auto">
           <blockquote
             class="bg-gray-700 p-6 rounded-lg border-l-4 border-amber-500 italic shadow-2xl"
           >
-            “Betrouwbare service, altijd op tijd!”
-            <cite class="block mt-4 font-bold text-amber-500">– Mathias</cite>
+            <span data-i18n="review1"
+              >“Betrouwbare service, altijd op tijd!”</span
+            >
+            <cite
+              data-i18n="review1Author"
+              class="block mt-4 font-bold text-amber-500"
+              >– Mathias</cite
+            >
           </blockquote>
           <blockquote
             class="bg-gray-700 p-6 rounded-lg border-l-4 border-amber-500 italic shadow-2xl"
           >
-            “Fowed van Gent Zuid is mijn go-to taxi voor luchthaventransfers.”
-            <cite class="block mt-4 font-bold text-amber-500">– Emma</cite>
+            <span data-i18n="review2"
+              >“Fowed van Gent Zuid is mijn go-to taxi voor
+              luchthaventransfers.”</span
+            >
+            <cite
+              data-i18n="review2Author"
+              class="block mt-4 font-bold text-amber-500"
+              >– Emma</cite
+            >
           </blockquote>
         </div>
       </section>
     </main>
+
     <footer class="bg-gray-800 text-center p-6 mt-12">
       <div class="flex flex-col items-center gap-4 mb-4">
         <div class="flex gap-4">
@@ -350,22 +513,54 @@
           </a>
         </div>
         <div class="text-sm">
-          <a href="/privacybeleid.html" class="hover:text-amber-500"
+          <a
+            href="/privacybeleid.html"
+            data-i18n="footerPrivacy"
+            class="hover:text-amber-500"
             >Privacybeleid</a
           >
           |
-          <a href="/algemene-voorwaarden.html" class="hover:text-amber-500"
+          <a
+            href="/algemene-voorwaarden.html"
+            data-i18n="footerTerms"
+            class="hover:text-amber-500"
             >Algemene Voorwaarden</a
           >
         </div>
       </div>
-      <p class="text-sm text-gray-500">
+      <p class="text-sm text-gray-500" data-i18n="footerCopyright">
         © 2024 Fowed van Gent Zuid. Alle rechten voorbehouden.
       </p>
-      <p class="text-sm text-gray-500">
-        Webdesign by <strong>Mehdi Oulad Khlie</strong>
+      <p class="text-sm text-gray-500" data-i18n="footerDesign">
+        Webdesign by Mehdi Oulad Khlie
       </p>
     </footer>
+
+    <!-- Vertalingen laden -->
+    <script>
+      let translations = {};
+      let currentLang = "nl";
+      function translatePage(lang) {
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          if (translations[lang] && translations[lang][key]) {
+            el.innerText = translations[lang][key];
+          }
+        });
+      }
+      fetch("translations.json")
+        .then((response) => response.json())
+        .then((data) => {
+          translations = data;
+          translatePage(currentLang);
+        })
+        .catch((err) => console.error("Fout bij laden van vertalingen:", err));
+      document.getElementById("langSelect").addEventListener("change", (e) => {
+        currentLang = e.target.value;
+        translatePage(currentLang);
+      });
+    </script>
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const slides = document.querySelectorAll(".slide");
@@ -381,6 +576,7 @@
         }
         setInterval(nextSlide, slideIntervalTime);
       });
+
       document.addEventListener("DOMContentLoaded", function () {
         const scrollElements = document.querySelectorAll(".scroll-animate");
         const elementInView = (el, dividend = 1) => {
@@ -391,24 +587,15 @@
               dividend
           );
         };
-        const displayScrollElement = (element) => {
-          element.classList.add("animate");
-        };
-        const hideScrollElement = (element) => {
-          element.classList.remove("animate");
-        };
         const handleScrollAnimation = () => {
           scrollElements.forEach((el) => {
-            if (elementInView(el, 1.25)) {
-              displayScrollElement(el);
-            } else {
-              hideScrollElement(el);
-            }
+            el.classList.toggle("animate", elementInView(el, 1.25));
           });
         };
         window.addEventListener("scroll", handleScrollAnimation);
         handleScrollAnimation();
       });
+
       document.addEventListener("DOMContentLoaded", function () {
         const hamburger = document.getElementById("hamburger");
         const mobileMenu = document.getElementById("mobileMenu");
