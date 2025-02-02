@@ -4,14 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fowed van Gent Zuid - Taxi Edition</title>
-    <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Bebas Neue & Roboto -->
     <link
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -20,7 +17,9 @@
       referrerpolicy="no-referrer"
     />
     <style>
-      /* Extra styling zodat de fonts gebruikt worden via Tailwind */
+      #mobileMenu {
+        z-index: 40;
+      }
       body {
         font-family: "Roboto", sans-serif;
       }
@@ -30,8 +29,6 @@
       html {
         scroll-behavior: smooth;
       }
-
-      /* Scroll-animatie styling */
       .scroll-animate {
         opacity: 0;
         transform: translateY(50px);
@@ -44,48 +41,65 @@
     </style>
   </head>
   <body class="bg-gray-900 text-gray-100">
-    <!-- Header met taxi-accent (aangepast naar amber) en hamburger-menu -->
     <header
       class="fixed top-0 left-0 w-full bg-amber-500 p-4 shadow-md flex justify-between items-center z-50"
     >
       <h1 class="text-3xl font-title text-black">Fowed van Gent Zuid</h1>
-      <!-- Desktop navigatie (zichtbaar vanaf md) -->
       <nav class="hidden md:block">
         <ul class="flex gap-4">
           <li><a href="#hero" class="hover:text-black font-bold">Home</a></li>
-          <li><a href="#diensten" class="hover:text-black font-bold">Diensten</a></li>
-          <li><a href="#tarieven" class="hover:text-black font-bold">Tarieven</a></li>
-          <li><a href="#over-ons" class="hover:text-black font-bold">Over Ons</a></li>
-          <li><a href="#contact" class="hover:text-black font-bold">Contact</a></li>
+          <li>
+            <a href="#diensten" class="hover:text-black font-bold">Diensten</a>
+          </li>
+          <li>
+            <a href="#tarieven" class="hover:text-black font-bold">Tarieven</a>
+          </li>
+          <li>
+            <a href="#over-ons" class="hover:text-black font-bold">Over Ons</a>
+          </li>
+          <li>
+            <a href="#contact" class="hover:text-black font-bold">Contact</a>
+          </li>
         </ul>
       </nav>
-      <!-- Hamburger knop voor mobiel (zichtbaar op kleine schermen) -->
       <button id="hamburger" class="block md:hidden focus:outline-none z-50">
-        <!-- Fallback: als Font Awesome niet laadt, wordt het ☰-symbool getoond -->
         <span class="text-2xl text-black">&#9776;</span>
       </button>
     </header>
-
-    <!-- Mobiele navigatie (verborgen, verschijnt als dropdown) -->
     <nav
       id="mobileMenu"
       class="fixed top-20 left-0 w-full bg-amber-500 shadow-md md:hidden hidden z-60"
     >
       <ul class="flex flex-col gap-4 p-4">
-        <li><a href="#hero" class="hover:text-black font-bold block">Home</a></li>
-        <li><a href="#diensten" class="hover:text-black font-bold block">Diensten</a></li>
-        <li><a href="#tarieven" class="hover:text-black font-bold block">Tarieven</a></li>
-        <li><a href="#over-ons" class="hover:text-black font-bold block">Over Ons</a></li>
-        <li><a href="#contact" class="hover:text-black font-bold block">Contact</a></li>
+        <li>
+          <a href="#hero" class="hover:text-black font-bold block">Home</a>
+        </li>
+        <li>
+          <a href="#diensten" class="hover:text-black font-bold block"
+            >Diensten</a
+          >
+        </li>
+        <li>
+          <a href="#tarieven" class="hover:text-black font-bold block"
+            >Tarieven</a
+          >
+        </li>
+        <li>
+          <a href="#over-ons" class="hover:text-black font-bold block"
+            >Over Ons</a
+          >
+        </li>
+        <li>
+          <a href="#contact" class="hover:text-black font-bold block"
+            >Contact</a
+          >
+        </li>
       </ul>
     </nav>
-
-    <!-- Hero Section -->
     <section
       id="hero"
       class="relative mt-16 min-h-[70vh] flex items-center justify-center overflow-hidden p-8 scroll-animate"
     >
-      <!-- Slideshow -->
       <div class="absolute inset-0">
         <div
           class="slide active absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100"
@@ -120,9 +134,7 @@
           style="background-image: url('images/hero8.jpg')"
         ></div>
       </div>
-      <!-- Overlay: subtiel zwart -->
       <div class="absolute inset-0 bg-black opacity-40"></div>
-      <!-- Hero Content -->
       <div
         class="relative bg-black bg-opacity-70 p-8 rounded-md text-center max-w-2xl"
       >
@@ -139,9 +151,7 @@
         </div>
       </div>
     </section>
-
     <main class="space-y-16">
-      <!-- Diensten Section -->
       <section id="diensten" class="p-8 bg-gray-800 text-center scroll-animate">
         <h2 class="text-4xl font-title text-amber-500 mb-8">Onze Diensten</h2>
         <div
@@ -190,14 +200,10 @@
             <h3 class="text-3xl font-title text-amber-500 mb-2">
               Privé Chauffeur
             </h3>
-            <p>
-              Persoonlijke chauffeur voor comfortabele en discrete service.
-            </p>
+            <p>Persoonlijke chauffeur voor comfortabele en discrete service.</p>
           </article>
         </div>
       </section>
-
-      <!-- Tarieven Section -->
       <section id="tarieven" class="p-8 bg-gray-900 text-center scroll-animate">
         <h2 class="text-4xl font-title text-amber-500 mb-8">Tarieven</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -227,8 +233,6 @@
           </article>
         </div>
       </section>
-
-      <!-- Over Ons Section -->
       <section id="over-ons" class="p-8 bg-gray-800 text-center scroll-animate">
         <h2 class="text-4xl font-title text-amber-500 mb-8">Over Ons</h2>
         <div class="max-w-4xl mx-auto">
@@ -263,8 +267,6 @@
           </article>
         </div>
       </section>
-
-      <!-- Contact / Social Media Section -->
       <section id="contact" class="p-8 bg-gray-900 text-center scroll-animate">
         <h2 class="text-4xl font-title text-amber-500 mb-4">Volg ons</h2>
         <p class="mb-8">Blijf op de hoogte via onze social media-kanalen:</p>
@@ -295,9 +297,10 @@
           </a>
         </div>
       </section>
-
-      <!-- Recensies Section -->
-      <section id="recensies" class="p-8 bg-gray-800 text-center scroll-animate">
+      <section
+        id="recensies"
+        class="p-8 bg-gray-800 text-center scroll-animate"
+      >
         <h2 class="text-4xl font-title text-amber-500 mb-4">Recensies</h2>
         <p class="text-2xl text-amber-500 mb-8">
           96% Aanbevolen (90 Beoordelingen)
@@ -318,8 +321,6 @@
         </div>
       </section>
     </main>
-
-    <!-- Footer (zonder scroll-animatie) -->
     <footer class="bg-gray-800 text-center p-6 mt-12">
       <div class="flex flex-col items-center gap-4 mb-4">
         <div class="flex gap-4">
@@ -368,16 +369,12 @@
         Webdesign by <strong>Mehdi Oulad Khlie</strong>
       </p>
     </footer>
-
-    <!-- Scripts -->
     <script>
-      // Slide show script blijft hetzelfde
       document.addEventListener("DOMContentLoaded", function () {
         const slides = document.querySelectorAll(".slide");
         let currentSlide = 0;
         const totalSlides = slides.length;
-        const slideIntervalTime = 5000; // 5 seconden
-
+        const slideIntervalTime = 5000;
         function nextSlide() {
           slides[currentSlide].classList.remove("opacity-100");
           slides[currentSlide].classList.add("opacity-0");
@@ -385,30 +382,24 @@
           slides[currentSlide].classList.remove("opacity-0");
           slides[currentSlide].classList.add("opacity-100");
         }
-
         setInterval(nextSlide, slideIntervalTime);
       });
-
-      // Intersection Observer voor scroll-animaties
       document.addEventListener("DOMContentLoaded", function () {
         const scrollElements = document.querySelectorAll(".scroll-animate");
-
         const elementInView = (el, dividend = 1) => {
           const elementTop = el.getBoundingClientRect().top;
           return (
             elementTop <=
-            (window.innerHeight || document.documentElement.clientHeight) / dividend
+            (window.innerHeight || document.documentElement.clientHeight) /
+              dividend
           );
         };
-
         const displayScrollElement = (element) => {
           element.classList.add("animate");
         };
-
         const hideScrollElement = (element) => {
           element.classList.remove("animate");
         };
-
         const handleScrollAnimation = () => {
           scrollElements.forEach((el) => {
             if (elementInView(el, 1.25)) {
@@ -418,17 +409,12 @@
             }
           });
         };
-
         window.addEventListener("scroll", handleScrollAnimation);
-        // Trigger initial check
         handleScrollAnimation();
       });
-
-      // Hamburger menu toggling
       document.addEventListener("DOMContentLoaded", function () {
         const hamburger = document.getElementById("hamburger");
         const mobileMenu = document.getElementById("mobileMenu");
-
         hamburger.addEventListener("click", function () {
           mobileMenu.classList.toggle("hidden");
         });
