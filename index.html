@@ -1,200 +1,465 @@
 <!DOCTYPE html>
 <html lang="nl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fowed van Gent Zuid</title>
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-  <link 
-    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" 
-    rel="stylesheet">
-  
-  <!-- Font Awesome -->
-  <link 
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-p6N19DFu1/QJ6xPjPfrKuvFQ5tN4Y1t2/HNfJk8uWcM5YO1CFgIaAjdGkRlPuLmRdhx5IWlV1sv3gVhlVb4QZA=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer">
-  
-  <!-- Your CSS file -->
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header>
-    <h1>Fowed van Gent Zuid</h1>
-    <nav>
-      <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#diensten">Diensten</a></li>
-        <li><a href="#tarieven">Tarieven</a></li>
-        <li><a href="#over-ons">Over Ons</a></li>
-        <li><a href="#contact">Contact</a></li>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fowed van Gent Zuid - Taxi Edition</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Bebas Neue & Roboto -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-p6N19DFu1/QJ6xPjPfrKuvFQ5tN4Y1t2/HNfJk8uWcM5YO1CFgIaAjdGkRlPuLmRdhx5IWlV1sv3gVhlVb4QZA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      /* Extra styling zodat de fonts gebruikt worden via Tailwind */
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+      .font-title {
+        font-family: "Bebas Neue", cursive;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Scroll-animatie styling */
+      .scroll-animate {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .scroll-animate.animate {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 text-gray-100">
+    <!-- Header met taxi-accent (aangepast naar amber) en hamburger-menu -->
+    <header
+      class="fixed top-0 left-0 w-full bg-amber-500 p-4 shadow-md flex justify-between items-center z-50"
+    >
+      <h1 class="text-3xl font-title text-black">Fowed van Gent Zuid</h1>
+      <!-- Desktop navigatie (zichtbaar vanaf md) -->
+      <nav class="hidden md:block">
+        <ul class="flex gap-4">
+          <li><a href="#hero" class="hover:text-black font-bold">Home</a></li>
+          <li>
+            <a href="#diensten" class="hover:text-black font-bold">Diensten</a>
+          </li>
+          <li>
+            <a href="#tarieven" class="hover:text-black font-bold">Tarieven</a>
+          </li>
+          <li>
+            <a href="#over-ons" class="hover:text-black font-bold">Over Ons</a>
+          </li>
+          <li>
+            <a href="#contact" class="hover:text-black font-bold">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- Hamburger knop voor mobiel (zichtbaar op kleine schermen) -->
+      <button id="hamburger" class="block md:hidden focus:outline-none z-50">
+        <i class="fas fa-bars text-2xl text-black"></i>
+      </button>
+    </header>
+
+    <!-- Mobiele navigatie (verborgen, verschijnt als dropdown) -->
+    <nav
+      id="mobileMenu"
+      class="fixed top-16 left-0 w-full bg-amber-500 shadow-md md:hidden hidden"
+    >
+      <ul class="flex flex-col gap-4 p-4">
+        <li>
+          <a href="#hero" class="hover:text-black font-bold block">Home</a>
+        </li>
+        <li>
+          <a href="#diensten" class="hover:text-black font-bold block"
+            >Diensten</a
+          >
+        </li>
+        <li>
+          <a href="#tarieven" class="hover:text-black font-bold block"
+            >Tarieven</a
+          >
+        </li>
+        <li>
+          <a href="#over-ons" class="hover:text-black font-bold block"
+            >Over Ons</a
+          >
+        </li>
+        <li>
+          <a href="#contact" class="hover:text-black font-bold block"
+            >Contact</a
+          >
+        </li>
       </ul>
     </nav>
-  </header>
-  
-  <section id="hero">
-    <div class="hero-slides">
-      <div class="slide active" style="background-image: url('images/hero1.jpg');"></div>
-      <div class="slide" style="background-image: url('images/hero2.jpg');"></div>
-      <div class="slide" style="background-image: url('images/hero3.jpg');"></div>
-      <div class="slide" style="background-image: url('images/hero4.jpg');"></div>
-      <div class="slide" style="background-image: url('images/hero5.jpg');"></div>
-      <div class="slide" style="background-image: url('images/hero6.jpg');"></div>
-      <div class="slide" style="background-image: url('images/hero7.jpg');"></div>
-      <div class="slide" style="background-image: url('images/hero8.jpg');"></div>
-    </div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h2>Welkom bij Fowed van Gent Zuid</h2>
-      <div class="cta-buttons">
-        <a href="tel:+32485044011" class="btn"><i class="fas fa-phone-alt"></i> Bel nu</a>
+
+    <!-- Hero Section -->
+    <section
+      id="hero"
+      class="relative mt-16 min-h-[70vh] flex items-center justify-center overflow-hidden p-8 scroll-animate"
+    >
+      <!-- Slideshow -->
+      <div class="absolute inset-0">
+        <div
+          class="slide active absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100"
+          style="background-image: url('images/hero1.jpg')"
+        ></div>
+        <div
+          class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+          style="background-image: url('images/hero2.jpg')"
+        ></div>
+        <div
+          class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+          style="background-image: url('images/hero3.jpg')"
+        ></div>
+        <div
+          class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+          style="background-image: url('images/hero4.jpg')"
+        ></div>
+        <div
+          class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+          style="background-image: url('images/hero5.jpg')"
+        ></div>
+        <div
+          class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+          style="background-image: url('images/hero6.jpg')"
+        ></div>
+        <div
+          class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+          style="background-image: url('images/hero7.jpg')"
+        ></div>
+        <div
+          class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+          style="background-image: url('images/hero8.jpg')"
+        ></div>
       </div>
-    </div>
-  </section>
-  
-  <main>
-    <section id="diensten">
-      <h2>Onze Diensten</h2>
-      <div class="diensten-grid">
-        <article class="dienst">
-          <i class="fas fa-taxi dienst-icon"></i>
-          <h3>Standaard Taxi</h3>
-          <p>Vervoer binnen Gent en omliggende regio’s voor je dagelijkse ritten.</p>
-        </article>
-        <article class="dienst">
-          <i class="fas fa-plane dienst-icon"></i>
-          <h3>Luchthaventransfers</h3>
-          <p>Betrouwbare ritten naar en van o.a. Brussels Airport, Charleroi en Antwerp.</p>
-        </article>
-        <article class="dienst">
-          <i class="fas fa-ring dienst-icon"></i>
-          <h3>Bruiloften &amp; Speciale Gelegenheden</h3>
-          <p>Exclusief vervoer voor bruiloften of andere feestelijke gelegenheden.</p>
-        </article>
-        <article class="dienst">
-          <i class="fas fa-user-tie dienst-icon"></i>
-          <h3>Privé Chauffeur</h3>
-          <p>Persoonlijke chauffeur voor comfortabele en discrete service.</p>
-        </article>
-      </div>
-    </section>
-    
-    <section id="tarieven">
-      <h2>Tarieven</h2>
-      <div class="tarieven-grid">
-        <article class="tarief">
-          <h3>Basis Tarief</h3>
-          <p>€X voor de eerste 5 km</p>
-        </article>
-        <article class="tarief">
-          <h3>Luchthaventransfers</h3>
-          <p>Vanaf €Y</p>
-        </article>
-        <article class="tarief">
-          <h3>Bruiloften &amp; Specials</h3>
-          <p>Op maat, afhankelijk van duur en locatie</p>
-        </article>
+      <!-- Overlay: subtiel zwart -->
+      <div class="absolute inset-0 bg-black opacity-40"></div>
+      <!-- Hero Content -->
+      <div
+        class="relative bg-black bg-opacity-70 p-8 rounded-md text-center max-w-2xl"
+      >
+        <h2 class="text-4xl md:text-6xl font-title text-amber-500 mb-4">
+          Welkom bij Fowed van Gent Zuid
+        </h2>
+        <div>
+          <a
+            href="tel:+32485044011"
+            class="inline-flex items-center bg-amber-500 text-black py-2 px-4 rounded-full shadow-lg hover:bg-amber-600 transition"
+          >
+            <i class="fas fa-phone-alt mr-2"></i> Bel nu
+          </a>
+        </div>
       </div>
     </section>
-    
-    <section id="over-ons">
-      <h2>Over Ons</h2>
-      <figure class="over-ons-figure">
-        <img src="pfp.jpg" alt="Ons Team">
-      </figure>
-      <article class="over-ons-text">
-        <h3>Onze Missie</h3>
-        <p><strong>Taxi Fowed van Gent Zuid</strong> wordt gerund door Fouad Oulad Khlie, een ervaren taxichauffeur die bekend is in het Gentse uitgaansleven. Met een passie voor zijn vak en een persoonlijk tintje brengt hij zijn klanten veilig naar hun bestemming. Fouad is actief op sociale media, waar hij zijn ritten deelt en betrokken is bij de Gentse gemeenschap. Hij heeft zelfs een rol gespeeld in de film <em>Belgica</em>.</p>
-        <p>Naast zijn werk als taxi-chauffeur heeft hij oog voor de verhalen van zijn passagiers, van eenzame ouderen tot drukke feestgangers. Met zijn ervaring en humor biedt hij meer dan alleen een rit: een luisterend oor voor iedereen die het nodig heeft.</p>
-        <ul>
-          <li>96% van onze klanten beveelt ons aan!</li>
-          <li>Klanttevredenheid, veiligheid en comfort staan voorop.</li>
-        </ul>
-      </article>
-    </section>
-    
-    <section id="contact">
-      <h2>Volg ons</h2>
-      <p>Blijf op de hoogte via onze social media-kanalen:</p>
-      <div class="socials-container">
-        <a href="https://www.facebook.com/TaxiFowedvanGentZuid" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-facebook-f"></i> Facebook
-        </a>
-        <a href="https://www.instagram.com/fowedgentzuid/" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-instagram"></i> Instagram
-        </a>
-        <a href="http://snap.fowedgentzuid/?fbclid=PAZXh0bgNhZW0CMTEAAabAyqAAULSamLWLld6CV7W_VSJbPcrH-q2RWOeRARclk5yy9H4Lr4wcu0E_aem_xIevdliZsP8Iz7Jo-XLCbA" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-snapchat"></i> Snapchat
-        </a>
+
+    <main class="space-y-16">
+      <!-- Diensten Section -->
+      <section id="diensten" class="p-8 bg-gray-800 text-center scroll-animate">
+        <h2 class="text-4xl font-title text-amber-500 mb-8">Onze Diensten</h2>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto"
+        >
+          <article
+            class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
+          >
+            <i class="fas fa-taxi text-5xl text-amber-500 mb-4"></i>
+            <h3 class="text-3xl font-title text-amber-500 mb-2">
+              Standaard Taxi
+            </h3>
+            <p>
+              Vervoer binnen Gent en omliggende regio’s voor je dagelijkse
+              ritten.
+            </p>
+          </article>
+          <article
+            class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
+          >
+            <i class="fas fa-plane text-5xl text-amber-500 mb-4"></i>
+            <h3 class="text-3xl font-title text-amber-500 mb-2">
+              Luchthaventransfers
+            </h3>
+            <p>
+              Betrouwbare ritten naar en van o.a. Brussels Airport, Charleroi en
+              Antwerp.
+            </p>
+          </article>
+          <article
+            class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
+          >
+            <i class="fas fa-ring text-5xl text-amber-500 mb-4"></i>
+            <h3 class="text-3xl font-title text-amber-500 mb-2">
+              Bruiloften &amp; Speciale Gelegenheden
+            </h3>
+            <p>
+              Exclusief vervoer voor bruiloften of andere feestelijke
+              gelegenheden.
+            </p>
+          </article>
+          <article
+            class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
+          >
+            <i class="fas fa-user-tie text-5xl text-amber-500 mb-4"></i>
+            <h3 class="text-3xl font-title text-amber-500 mb-2">
+              Privé Chauffeur
+            </h3>
+            <p>Persoonlijke chauffeur voor comfortabele en discrete service.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Tarieven Section -->
+      <section id="tarieven" class="p-8 bg-gray-900 text-center scroll-animate">
+        <h2 class="text-4xl font-title text-amber-500 mb-8">Tarieven</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <article
+            class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
+          >
+            <h3 class="text-2xl font-title text-amber-500 mb-2">
+              Basis Tarief
+            </h3>
+            <p>€X voor de eerste 5 km</p>
+          </article>
+          <article
+            class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
+          >
+            <h3 class="text-2xl font-title text-amber-500 mb-2">
+              Luchthaventransfers
+            </h3>
+            <p>Vanaf €Y</p>
+          </article>
+          <article
+            class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
+          >
+            <h3 class="text-2xl font-title text-amber-500 mb-2">
+              Bruiloften &amp; Specials
+            </h3>
+            <p>Op maat, afhankelijk van duur en locatie</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Over Ons Section -->
+      <section id="over-ons" class="p-8 bg-gray-800 text-center scroll-animate">
+        <h2 class="text-4xl font-title text-amber-500 mb-8">Over Ons</h2>
+        <div class="max-w-4xl mx-auto">
+          <figure class="mb-8">
+            <img
+              src="pfp.jpg"
+              alt="Ons Team"
+              class="w-full rounded-lg shadow-2xl hover:scale-105 transition transform"
+            />
+          </figure>
+          <article class="text-left mx-4">
+            <h3 class="text-3xl font-title text-amber-500 mb-4">Onze Missie</h3>
+            <p class="mb-4">
+              <strong>Taxi Fowed van Gent Zuid</strong> wordt gerund door Fouad
+              Oulad Khlie, een ervaren taxichauffeur die bekend is in het Gentse
+              uitgaansleven. Met een passie voor zijn vak en een persoonlijk
+              tintje brengt hij zijn klanten veilig naar hun bestemming. Fouad
+              is actief op sociale media, waar hij zijn ritten deelt en
+              betrokken is bij de Gentse gemeenschap. Hij heeft zelfs een rol
+              gespeeld in de film <em>Belgica</em>.
+            </p>
+            <p class="mb-4">
+              Naast zijn werk als taxi-chauffeur heeft hij oog voor de verhalen
+              van zijn passagiers, van eenzame ouderen tot drukke feestgangers.
+              Met zijn ervaring en humor biedt hij meer dan alleen een rit: een
+              luisterend oor voor iedereen die het nodig heeft.
+            </p>
+            <ul class="list-disc list-inside">
+              <li>96% van onze klanten beveelt ons aan!</li>
+              <li>Klanttevredenheid, veiligheid en comfort staan voorop.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- Contact / Social Media Section -->
+      <section id="contact" class="p-8 bg-gray-900 text-center scroll-animate">
+        <h2 class="text-4xl font-title text-amber-500 mb-4">Volg ons</h2>
+        <p class="mb-8">Blijf op de hoogte via onze social media-kanalen:</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a
+            href="https://www.facebook.com/TaxiFowedvanGentZuid"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 bg-gray-700 p-4 rounded-full shadow-lg hover:bg-amber-500 transition"
+          >
+            <i class="fab fa-facebook-f"></i> Facebook
+          </a>
+          <a
+            href="https://www.instagram.com/fowedgentzuid/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 bg-gray-700 p-4 rounded-full shadow-lg hover:bg-amber-500 transition"
+          >
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+          <a
+            href="http://snap.fowedgentzuid/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 bg-gray-700 p-4 rounded-full shadow-lg hover:bg-amber-500 transition"
+          >
+            <i class="fab fa-snapchat"></i> Snapchat
+          </a>
+        </div>
+      </section>
+
+      <!-- Recensies Section -->
+      <section
+        id="recensies"
+        class="p-8 bg-gray-800 text-center scroll-animate"
+      >
+        <h2 class="text-4xl font-title text-amber-500 mb-4">Recensies</h2>
+        <p class="text-2xl text-amber-500 mb-8">
+          96% Aanbevolen (90 Beoordelingen)
+        </p>
+        <div class="space-y-6 max-w-2xl mx-auto">
+          <blockquote
+            class="bg-gray-700 p-6 rounded-lg border-l-4 border-amber-500 italic shadow-2xl"
+          >
+            “Betrouwbare service, altijd op tijd!”
+            <cite class="block mt-4 font-bold text-amber-500">– Mathias</cite>
+          </blockquote>
+          <blockquote
+            class="bg-gray-700 p-6 rounded-lg border-l-4 border-amber-500 italic shadow-2xl"
+          >
+            “Fowed van Gent Zuid is mijn go-to taxi voor luchthaventransfers.”
+            <cite class="block mt-4 font-bold text-amber-500">– Emma</cite>
+          </blockquote>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer (zonder scroll-animatie) -->
+    <footer class="bg-gray-800 text-center p-6 mt-12">
+      <div class="flex flex-col items-center gap-4 mb-4">
+        <div class="flex gap-4">
+          <a
+            href="https://www.facebook.com/TaxiFowedvanGentZuid"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            class="text-amber-500 hover:text-amber-600 text-2xl"
+          >
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/fowedgentzuid/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            class="text-amber-500 hover:text-amber-600 text-2xl"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="http://snap.fowedgentzuid/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Snapchat"
+            class="text-amber-500 hover:text-amber-600 text-2xl"
+          >
+            <i class="fab fa-snapchat"></i>
+          </a>
+        </div>
+        <div class="text-sm">
+          <a href="/privacybeleid.html" class="hover:text-amber-500"
+            >Privacybeleid</a
+          >
+          |
+          <a href="/algemene-voorwaarden.html" class="hover:text-amber-500"
+            >Algemene Voorwaarden</a
+          >
+        </div>
       </div>
-    </section>
-    
-    <section id="recensies">
-      <h2>Recensies</h2>
-      <p class="recensies-stat">96% Aanbevolen (90 Beoordelingen)</p>
-      <div class="recensies-container">
-        <blockquote class="recensie">
-          “Betrouwbare service, altijd op tijd!”
-          <cite>– Mathias</cite>
-        </blockquote>
-        <blockquote class="recensie">
-          “Fowed van Gent Zuid is mijn go-to taxi voor luchthaventransfers.”
-          <cite>– Emma</cite>
-        </blockquote>
-      </div>
-    </section>
-  </main>
-  
-  <footer>
-    <div class="footer-top">
-        <div class="social-media">
-            <a href="https://www.facebook.com/TaxiFowedvanGentZuid" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <i class="fab fa-facebook-f" aria-hidden="true"></i>
-            </a>
-            <a href="https://www.instagram.com/fowedgentzuid/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <i class="fab fa-instagram" aria-hidden="true"></i>
-            </a>
-            <a href="http://snap.fowedgentzuid/?fbclid=PAZXh0bgNhZW0CMTEAAabAyqAAULSamLWLld6CV7W_VSJbPcrH-q2RWOeRARclk5yy9H4Lr4wcu0E_aem_xIevdliZsP8Iz7Jo-XLCbA" target="_blank" rel="noopener noreferrer" aria-label="Snapchat">
-              <i class="fab fa-snapchat" aria-hidden="true"></i>
-            </a>
-          </div>
-      <div class="footer-links">
-        <a href="/privacybeleid.html">Privacybeleid</a> | 
-        <a href="/algemene-voorwaarden.html">Algemene Voorwaarden</a>
-      </div>
-    </div>
-    <p>© 2024 Fowed van Gent Zuid. Alle rechten voorbehouden.</p>
-    <p>Webdesign by <strong>Mehdi Oulad Khlie</strong></p>
-  </footer>
-  
-  <script 
-    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" 
-    integrity="sha512-EoPHT6A8R4xVnGzT1kD5n2Yo2DItQZSoSe/432QclMZbrrTxjj6GaaLSq1knaSrLLHVAOJpGvqK/TZX8oNSkOg==" 
-    crossorigin="anonymous" 
-    referrerpolicy="no-referrer">
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Slideshow Script
-      const slides = document.querySelectorAll('.slide');
-      let currentSlide = 0;
-      const totalSlides = slides.length;
-      const slideIntervalTime = 5000; // 5 seconden
-      
-      function nextSlide() {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % totalSlides;
-        slides[currentSlide].classList.add('active');
-      }
-      
-      setInterval(nextSlide, slideIntervalTime);
-    });
-  </script>
-</body>
+      <p class="text-sm text-gray-500">
+        © 2024 Fowed van Gent Zuid. Alle rechten voorbehouden.
+      </p>
+      <p class="text-sm text-gray-500">
+        Webdesign by <strong>Mehdi Oulad Khlie</strong>
+      </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      // Slide show script blijft hetzelfde
+      document.addEventListener("DOMContentLoaded", function () {
+        const slides = document.querySelectorAll(".slide");
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        const slideIntervalTime = 5000; // 5 seconden
+
+        function nextSlide() {
+          slides[currentSlide].classList.remove("opacity-100");
+          slides[currentSlide].classList.add("opacity-0");
+          currentSlide = (currentSlide + 1) % totalSlides;
+          slides[currentSlide].classList.remove("opacity-0");
+          slides[currentSlide].classList.add("opacity-100");
+        }
+
+        setInterval(nextSlide, slideIntervalTime);
+      });
+
+      // Intersection Observer voor scroll-animaties
+      document.addEventListener("DOMContentLoaded", function () {
+        const scrollElements = document.querySelectorAll(".scroll-animate");
+
+        const elementInView = (el, dividend = 1) => {
+          const elementTop = el.getBoundingClientRect().top;
+          return (
+            elementTop <=
+            (window.innerHeight || document.documentElement.clientHeight) /
+              dividend
+          );
+        };
+
+        const displayScrollElement = (element) => {
+          element.classList.add("animate");
+        };
+
+        const hideScrollElement = (element) => {
+          element.classList.remove("animate");
+        };
+
+        const handleScrollAnimation = () => {
+          scrollElements.forEach((el) => {
+            if (elementInView(el, 1.25)) {
+              displayScrollElement(el);
+            } else {
+              hideScrollElement(el);
+            }
+          });
+        };
+
+        window.addEventListener("scroll", handleScrollAnimation);
+        // Trigger initial check
+        handleScrollAnimation();
+      });
+
+      // Hamburger menu toggling
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.getElementById("hamburger");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        hamburger.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+        });
+      });
+    </script>
+  </body>
 </html>
