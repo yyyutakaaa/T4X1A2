@@ -53,55 +53,30 @@
       <nav class="hidden md:block">
         <ul class="flex gap-4">
           <li><a href="#hero" class="hover:text-black font-bold">Home</a></li>
-          <li>
-            <a href="#diensten" class="hover:text-black font-bold">Diensten</a>
-          </li>
-          <li>
-            <a href="#tarieven" class="hover:text-black font-bold">Tarieven</a>
-          </li>
-          <li>
-            <a href="#over-ons" class="hover:text-black font-bold">Over Ons</a>
-          </li>
-          <li>
-            <a href="#contact" class="hover:text-black font-bold">Contact</a>
-          </li>
+          <li><a href="#diensten" class="hover:text-black font-bold">Diensten</a></li>
+          <li><a href="#tarieven" class="hover:text-black font-bold">Tarieven</a></li>
+          <li><a href="#over-ons" class="hover:text-black font-bold">Over Ons</a></li>
+          <li><a href="#contact" class="hover:text-black font-bold">Contact</a></li>
         </ul>
       </nav>
       <!-- Hamburger knop voor mobiel (zichtbaar op kleine schermen) -->
       <button id="hamburger" class="block md:hidden focus:outline-none z-50">
-        <i class="fas fa-bars text-2xl text-black"></i>
+        <!-- Fallback: als Font Awesome niet laadt, wordt het ☰-symbool getoond -->
+        <span class="text-2xl text-black">&#9776;</span>
       </button>
     </header>
 
     <!-- Mobiele navigatie (verborgen, verschijnt als dropdown) -->
     <nav
       id="mobileMenu"
-      class="fixed top-16 left-0 w-full bg-amber-500 shadow-md md:hidden hidden"
+      class="fixed top-20 left-0 w-full bg-amber-500 shadow-md md:hidden hidden z-60"
     >
       <ul class="flex flex-col gap-4 p-4">
-        <li>
-          <a href="#hero" class="hover:text-black font-bold block">Home</a>
-        </li>
-        <li>
-          <a href="#diensten" class="hover:text-black font-bold block"
-            >Diensten</a
-          >
-        </li>
-        <li>
-          <a href="#tarieven" class="hover:text-black font-bold block"
-            >Tarieven</a
-          >
-        </li>
-        <li>
-          <a href="#over-ons" class="hover:text-black font-bold block"
-            >Over Ons</a
-          >
-        </li>
-        <li>
-          <a href="#contact" class="hover:text-black font-bold block"
-            >Contact</a
-          >
-        </li>
+        <li><a href="#hero" class="hover:text-black font-bold block">Home</a></li>
+        <li><a href="#diensten" class="hover:text-black font-bold block">Diensten</a></li>
+        <li><a href="#tarieven" class="hover:text-black font-bold block">Tarieven</a></li>
+        <li><a href="#over-ons" class="hover:text-black font-bold block">Over Ons</a></li>
+        <li><a href="#contact" class="hover:text-black font-bold block">Contact</a></li>
       </ul>
     </nav>
 
@@ -215,7 +190,9 @@
             <h3 class="text-3xl font-title text-amber-500 mb-2">
               Privé Chauffeur
             </h3>
-            <p>Persoonlijke chauffeur voor comfortabele en discrete service.</p>
+            <p>
+              Persoonlijke chauffeur voor comfortabele en discrete service.
+            </p>
           </article>
         </div>
       </section>
@@ -320,10 +297,7 @@
       </section>
 
       <!-- Recensies Section -->
-      <section
-        id="recensies"
-        class="p-8 bg-gray-800 text-center scroll-animate"
-      >
+      <section id="recensies" class="p-8 bg-gray-800 text-center scroll-animate">
         <h2 class="text-4xl font-title text-amber-500 mb-4">Recensies</h2>
         <p class="text-2xl text-amber-500 mb-8">
           96% Aanbevolen (90 Beoordelingen)
@@ -423,8 +397,7 @@
           const elementTop = el.getBoundingClientRect().top;
           return (
             elementTop <=
-            (window.innerHeight || document.documentElement.clientHeight) /
-              dividend
+            (window.innerHeight || document.documentElement.clientHeight) / dividend
           );
         };
 
